@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="ChatGPT Image Sep 30, 2026, 12_56_54 AM.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit-Chat</title>
+    <script  defer src="http://localhost:8080/socket.io/socket.io.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <img class="logo" src="ChatGPT Image Sep 30, 2026, 12_56_54 AM.png">
+    </nav>
+    <p id="connectionStatus" role="status" aria-live="polite"></p>
+    <div id="nameDialog" class="name-dialog" role="dialog" aria-modal="true" aria-labelledby="nameDialogTitle">
+        <div class="name-dialog-content">
+            <h1 id="nameDialogTitle">Join Chit-Chat</h1>
+            <form id="join-form">
+                <label for="userNameInput">Enter your name</label>
+                <input type="text" id="userNameInput" maxlength="32" autocomplete="name" required autofocus>
+                <button class="btn" type="submit">Join chat</button>
+            </form>
+        </div>
+    </div>
+    <div class="chat-toolbar">
+        <button class="btn" id="clear-chat" type="button" hidden>Clear chat for everyone</button>
+    </div>
+    <div class="container">
+    </div>
+
+    <div class="send">
+        <form action="#" id="send-container">
+            <input type="text" name="messageInp" id="messageInp">
+            <button class="btn" type="submit">send</button>
+        </form>
+    </div>
+
+    <script defer src="js/client.js"></script>
+</body>
+</html>
