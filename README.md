@@ -25,3 +25,29 @@ the message text. Any connected participant can delete an individual message
 or clear the entire shared room history; these actions also delete the matching
 MongoDB records. Names are supplied by chat participants and are not verified
 accounts.
+
+chitchat/
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── client.js
+│
+├── node_modules/
+│
+├── nodeServer/
+│   ├── node_modules/
+│   ├── .env
+│   ├── index.js
+│   ├── package-lock.json
+│   └── package.json
+│
+├── .gitignore
+├── app.js
+├── ChatGPT Image S...
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── universfield-new-...
