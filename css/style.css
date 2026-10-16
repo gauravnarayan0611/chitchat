@@ -1,0 +1,145 @@
+.logo{
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+
+}
+body{
+    background-color: rgb(232, 205, 174);
+}
+#connectionStatus{
+    margin: 8px auto;
+    max-width: 955px;
+    color: #7a1f1f;
+    text-align: center;
+}
+.name-dialog{
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.45);
+}
+.name-dialog[hidden]{
+    display: none;
+}
+.name-dialog-content{
+    box-sizing: border-box;
+    width: min(420px, 100%);
+    padding: 24px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(232, 205, 174);
+}
+.name-dialog-content h1{
+    margin-top: 0;
+}
+#join-form{
+    display: grid;
+    gap: 10px;
+}
+#userNameInput{
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+.chat-toolbar{
+    max-width: 1021px;
+    margin: 15px auto 0;
+    text-align: right;
+}
+#clear-chat{
+    padding: 0 12px;
+}
+.container{
+    max-width: 955px;
+    /* max-width: 60vh; */
+    background-color: #d87474;
+    margin: auto;
+    height: 60vh;
+    margin-top: 15px;
+    padding: 33px;
+    overflow-y:auto;
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+    
+    margin-bottom: 23px;
+}
+
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #777;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.message{
+    box-sizing: border-box;
+    background-color: gray;
+    width: fit-content;
+    max-width: 70%;
+    padding:10px;
+    margin: 17px 12px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.message-text{
+    min-width: 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+.message-delete{
+    flex: 0 0 auto;
+    cursor: pointer;
+    border: 1px solid #572020;
+    border-radius: 5px;
+    background: #f2caca;
+    padding: 4px 7px;
+}
+.left{
+    float:left;
+    clear:both;
+
+}
+
+.right{
+    float: right;
+    clear:both;
+
+}
+#send-container{
+    display:block;
+    margin:auto;
+    text-align:center;
+    max-width: 985px;
+    width: 100%;
+}
+
+#messageInp{
+    margin-top: 5px;
+    width:92%;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 35px;
+}
+.btn{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 35px;
+}

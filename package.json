@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "chitchat",
   "version": "1.0.0",
   "description": "",
@@ -17,5 +18,9 @@
     "express": "^5.2.1",
     "mongodb": "^7.7.0",
     "socket.io": "^4.8.4"
+=======
+  "dependencies": {
+    "ejs": "^6.0.1"
+>>>>>>> 3c3d517 (adding correct files)
   }
 }
