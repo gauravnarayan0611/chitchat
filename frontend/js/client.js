@@ -77,7 +77,7 @@ joinForm.addEventListener('submit', event => {
     }
 
     if (typeof io !== 'function') {
-        connectionStatus.textContent = 'Chat server is not available. Start it with "npm start" in the nodeServer folder, then reload this page.';
+        connectionStatus.textContent = 'Chat server is not available. Start it with "npm start" in the backend folder, then reload this page.';
         return;
     }
 

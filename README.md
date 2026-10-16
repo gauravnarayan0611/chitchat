@@ -55,23 +55,28 @@ chitchat/
 =======
 # Chit-Chat
 
+## Project structure
+
+- `frontend/` contains the browser app, styles, scripts, and static assets.
+- `backend/` contains the Node.js chat server and its dependencies.
+
 ## Run with MongoDB
 
 The chat server stores room entries, departures, and messages in MongoDB. It loads
 the most recent 100 chat events for each person who joins.
 
 1. Install and start MongoDB locally, or create a MongoDB Atlas cluster.
-2. In `nodeServer`, copy `.env.example` to `.env` and set `MONGODB_URI` to your
-   MongoDB connection string. Keep `.env` private; it is ignored by Git.
-3. From the `nodeServer` directory, install dependencies and start the server:
+2. Create `backend/.env` and set `MONGODB_URI` to your MongoDB connection
+   string. Keep `.env` private; it is ignored by Git.
+3. From the `backend` directory, install dependencies and start the server:
 
    ```sh
    npm install
    npm start
    ```
 
-4. Serve the project root on `http://localhost:5500` (for example, with the
-   VS Code Live Server extension) and open the page.
+4. Serve the `frontend` directory on `http://localhost:5500` (for example,
+   open `frontend/index.html` with the VS Code Live Server extension).
 
 Events are stored in the `chatEvents` collection in the database named by
 `MONGODB_DB` (default: `chitchat`). Each event has a room, type (`join`,
