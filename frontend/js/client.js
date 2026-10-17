@@ -83,7 +83,7 @@ joinForm.addEventListener('submit', event => {
 
     joinButton.disabled = true;
     connectionStatus.textContent = 'Connecting to chat...';
-    socket = io('http://localhost:8080');
+    socket = io('https://chitchat-backend-kbnb.onrender.com');
 
     socket.on('chat-history', history => {
         messageContainer.replaceChildren();
