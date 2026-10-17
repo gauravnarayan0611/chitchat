@@ -16,7 +16,7 @@ const isAllowedOrigin = origin => {
 
     try {
         const url = new URL(origin);
-        return url.protocol === 'http:' && ['https://chitchat-frontend-se96.onrender.com/', '127.0.0.1'].includes(url.hostname);
+        return url.protocol === 'https:' && ['https://chitchat-frontend-se96.onrender.com/', '127.0.0.1'].includes(url.hostname);
     } catch {
         return false;
     }
