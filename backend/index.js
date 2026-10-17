@@ -9,14 +9,19 @@ const PORT = Number(process.env.PORT) || 8080;
 const ROOM = 'main';
 const HISTORY_LIMIT = 100;
 const mongoUri = process.env.MONGODB_URI;
+const allowedHosts = [
+    'localhost',
+    '127.0.0.1',
+    'chitchat-frontend-se96.onrender.com'
+];
+
 const isAllowedOrigin = origin => {
     if (!origin) {
         return true;
     }
 
     try {
-        const url = new URL(origin);
-        return url.protocol === 'https:' && ['localhost', '127.0.0.1', 'https://chitchat-frontend-se96.onrender.com/' ].includes(url.hostname);
+        return allowedHosts.includes(new URL(origin).hostname);
     } catch {
         return false;
     }
