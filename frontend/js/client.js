@@ -20,7 +20,7 @@ const isLocalFrontend = ['localhost', '127.0.0.1'].includes(window.location.host
 const CHAT_SERVER_URL = isLocalFrontend
     ? 'http://localhost:8080'
     : configuredServerUrl || window.location.origin;
-const CHAT_SERVER_URL = configuredServerUrl
+// const CHAT_SERVER_URL = configuredServerUrl
     || (['https://chitchat-frontend-se96.onrender.com/', '127.0.0.1'].includes(window.location.hostname)
         ? 'https://chitchat-frontend-se96.onrender.com/'
         : window.location.origin);
