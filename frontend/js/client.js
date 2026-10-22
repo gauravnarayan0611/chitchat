@@ -16,17 +16,14 @@ const messageSound = new Audio('universfield-new-notification-012-363675.mp3');
 const ROOM_ID_PATTERN = /^[A-F0-9]{16}$/;
 const serverUrlMeta = document.querySelector('meta[name="chitchat-server-url"]');
 const configuredServerUrl = serverUrlMeta ? serverUrlMeta.content.trim() : '';
-<<<<<<< HEAD
 const isLocalFrontend = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 const CHAT_SERVER_URL = isLocalFrontend
     ? 'http://localhost:8080'
     : configuredServerUrl || window.location.origin;
-=======
 const CHAT_SERVER_URL = configuredServerUrl
     || (['https://chitchat-frontend-se96.onrender.com/', '127.0.0.1'].includes(window.location.hostname)
         ? 'https://chitchat-frontend-se96.onrender.com/'
         : window.location.origin);
->>>>>>> 2c59aa3f706686d55579beba2d3c13f9a37ab4fe
 let socket;
 let socketInitialization;
 let pendingJoin = false;
