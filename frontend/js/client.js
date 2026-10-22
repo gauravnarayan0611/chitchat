@@ -219,16 +219,13 @@ joinForm.addEventListener('submit', async event => {
     pendingJoin = true;
     joinButton.disabled = true;
     connectionStatus.textContent = 'Connecting to chat...';
-<<<<<<< HEAD
     if (!await initializeSocket()) {
         pendingJoin = false;
         return;
     }
     joinRoom();
 });
-=======
     socket = io('https://chitchat-backend-kbnb.onrender.com');
->>>>>>> 6ce5e77eb36cc4ca28ca57948abb68797131d430
 
 roomIdInput.addEventListener('input', () => {
     roomIdInput.setCustomValidity('');
