@@ -16,7 +16,7 @@ const ROOM_ID_PATTERN = /^[A-F0-9]{16}$/;
 const serverUrlMeta = document.querySelector('meta[name="chitchat-server-url"]');
 const configuredServerUrl = serverUrlMeta ? serverUrlMeta.content.trim() : '';
 const CHAT_SERVER_URL = configuredServerUrl
-    || (['localhost', '127.0.0.1'].includes(window.location.hostname)
+    || (['https://chitchat-frontend-se96.onrender.com/', '127.0.0.1'].includes(window.location.hostname)
         ? 'https://chitchat-frontend-se96.onrender.com/'
         : window.location.origin);
 let socket;
