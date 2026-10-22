@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <link rel="icon" href="ChatGPT Image Sep 30, 2026, 12_56_54 AM.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="chitchat-server-url" content="">
     <title>Chit-Chat</title>
-    <script  defer src="http://localhost:8080/socket.io/socket.io.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,6 +20,25 @@
             <form id="join-form">
                 <label for="userNameInput">Enter your name</label>
                 <input type="text" id="userNameInput" maxlength="32" autocomplete="name" required autofocus>
+
+                <label for="roomIdInput">Room ID</label>
+                <input
+                    type="text"
+                    id="roomIdInput"
+                    minlength="16"
+                    maxlength="16"
+                    pattern="[A-Fa-f0-9]{16}"
+                    placeholder="Create a room or enter an ID"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    spellcheck="false"
+                    aria-describedby="roomHint"
+                    required>
+                <div class="room-actions">
+                    <button class="btn" id="createRoomButton" type="button">Create room</button>
+                    <button class="btn" id="copyRoomButton" type="button" hidden>Copy ID</button>
+                </div>
+                <p id="roomHint" class="room-hint" aria-live="polite">Share your room ID with friends so they can join.</p>
                 <button class="btn" type="submit">Join chat</button>
             </form>
         </div>
