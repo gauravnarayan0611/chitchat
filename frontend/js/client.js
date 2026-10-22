@@ -11,14 +11,15 @@ const joinButton = joinForm.querySelector('button[type="submit"]');
 const createRoomButton = document.getElementById('createRoomButton');
 const copyRoomButton = document.getElementById('copyRoomButton');
 const clearChatButton = document.getElementById('clear-chat');
+const activeRoom = document.getElementById('activeRoom');
 const messageSound = new Audio('universfield-new-notification-012-363675.mp3');
 const ROOM_ID_PATTERN = /^[A-F0-9]{16}$/;
 const serverUrlMeta = document.querySelector('meta[name="chitchat-server-url"]');
 const configuredServerUrl = serverUrlMeta ? serverUrlMeta.content.trim() : '';
-const CHAT_SERVER_URL = configuredServerUrl
-    || (['localhost', '127.0.0.1'].includes(window.location.hostname)
-        ? 'http://localhost:8080'
-        : window.location.origin);
+const isLocalFrontend = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+const CHAT_SERVER_URL = isLocalFrontend
+    ? 'http://localhost:8080'
+    : configuredServerUrl || window.location.origin;
 let socket;
 let socketInitialization;
 let pendingJoin = false;
@@ -101,6 +102,8 @@ const joinRoom = () => {
         pendingRoomId = '';
         nameDialog.hidden = true;
         clearChatButton.hidden = false;
+        activeRoom.textContent = `Room ID: ${result.event.room}`;
+        activeRoom.hidden = false;
         connectionStatus.textContent = '';
         displayEvent(result.event, 'right');
         messageInput.focus();
@@ -225,7 +228,6 @@ joinForm.addEventListener('submit', async event => {
     }
     joinRoom();
 });
-    socket = io('https://chitchat-backend-kbnb.onrender.com');
 
 roomIdInput.addEventListener('input', () => {
     roomIdInput.setCustomValidity('');

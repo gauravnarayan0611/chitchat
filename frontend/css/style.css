@@ -63,9 +63,15 @@ body{
     font-size: 0.9rem;
 }
 .chat-toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 1021px;
     margin: 15px auto 0;
-    text-align: right;
+}
+#activeRoom{
+    color: #572020;
+    font-weight: 600;
 }
 #clear-chat{
     padding: 0 12px;

@@ -30,8 +30,8 @@ const isAllowedOrigin = origin => {
     try {
         const url = new URL(origin);
         return (url.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(url.hostname))
+            || (url.protocol === 'https:' && allowedHosts.includes(url.hostname))
             || allowedOrigins.has(url.origin);
-        return allowedHosts.includes(new URL(origin).hostname);
     } catch {
         return false;
     }

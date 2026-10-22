@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <link rel="icon" href="ChatGPT Image Sep 30, 2026, 12_56_54 AM.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="chitchat-server-url" content="">
+    <meta name="chitchat-server-url" content="https://chitchat-backend-kbnb.onrender.com">
     <title>Chit-Chat</title>
-    <script  defer src="https://chitchat-backend-kbnb.onrender.com/socket.io/socket.io.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -45,6 +44,7 @@
         </div>
     </div>
     <div class="chat-toolbar">
+        <span id="activeRoom" hidden></span>
         <button class="btn" id="clear-chat" type="button" hidden>Clear chat for everyone</button>
     </div>
     <div class="container">
