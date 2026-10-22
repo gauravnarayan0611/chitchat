@@ -17,7 +17,7 @@ const serverUrlMeta = document.querySelector('meta[name="chitchat-server-url"]')
 const configuredServerUrl = serverUrlMeta ? serverUrlMeta.content.trim() : '';
 const CHAT_SERVER_URL = configuredServerUrl
     || (['localhost', '127.0.0.1'].includes(window.location.hostname)
-        ? 'http://localhost:8080'
+        ? 'https://chitchat-frontend-se96.onrender.com/'
         : window.location.origin);
 let socket;
 let socketInitialization;
