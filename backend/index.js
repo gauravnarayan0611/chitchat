@@ -17,7 +17,6 @@ const allowedOrigins = new Set(
         .filter(Boolean)
 );
 const allowedHosts = [
-    'localhost',
     '127.0.0.1',
     'chitchat-frontend-se96.onrender.com'
 ];
@@ -29,8 +28,12 @@ const isAllowedOrigin = origin => {
 
     try {
         const url = new URL(origin);
+<<<<<<< HEAD
         return (url.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(url.hostname))
             || (url.protocol === 'https:' && allowedHosts.includes(url.hostname))
+=======
+        return (url.protocol === 'http:' && ['chitchat-frontend-se96.onrender.com', '127.0.0.1'].includes(url.hostname))
+>>>>>>> 2c59aa3f706686d55579beba2d3c13f9a37ab4fe
             || allowedOrigins.has(url.origin);
     } catch {
         return false;
@@ -239,7 +242,7 @@ async function startServer() {
         });
     });
 
-    httpServer.listen(PORT, () => {
+    httpServer.listen(PORT, "0.0.0.0", () => {
         console.log(`Chat server listening on port ${PORT}`);
     });
 }
