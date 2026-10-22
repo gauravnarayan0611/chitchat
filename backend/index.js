@@ -9,6 +9,7 @@ const PORT = Number(process.env.PORT) || 8080;
 const HISTORY_LIMIT = 100;
 const ROOM_ID_PATTERN = /^[A-F0-9]{16}$/;
 const mongoUri = process.env.MONGODB_URI;
+<<<<<<< HEAD
 const createRoomId = () => randomBytes(8).toString('hex').toUpperCase();
 const allowedOrigins = new Set(
     (process.env.FRONTEND_ORIGINS || '')
@@ -16,15 +17,27 @@ const allowedOrigins = new Set(
         .map(origin => origin.trim())
         .filter(Boolean)
 );
+=======
+const allowedHosts = [
+    'localhost',
+    '127.0.0.1',
+    'chitchat-frontend-se96.onrender.com'
+];
+
+>>>>>>> 6ce5e77eb36cc4ca28ca57948abb68797131d430
 const isAllowedOrigin = origin => {
     if (!origin) {
         return true;
     }
 
     try {
+<<<<<<< HEAD
         const url = new URL(origin);
         return (url.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(url.hostname))
             || allowedOrigins.has(url.origin);
+=======
+        return allowedHosts.includes(new URL(origin).hostname);
+>>>>>>> 6ce5e77eb36cc4ca28ca57948abb68797131d430
     } catch {
         return false;
     }
